@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LR6.2-6.3</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+	<style type="text/css">
+		body { 
+			height: 9000px;
+			background-color: chocolate;
+		}
+	</style>
+
+	<script language="JavaScript" type="text/javascript">
+
+		function array1 () {
+			alert("Відкрийте консоль (F12)");
+			let name = "Ruslan";
+			let surname = "Tkalenko";
+			if (document.getElementById('do').checked) {
+				let i = 100;
+				do {
+					if ( (i % 3 == 0) && (i % 5 == 0) )
+						console.log(name + ' ' + surname);
+					else
+						if (i % 3 == 0)
+							console.log(name);
+						else
+							if (i % 5 == 0)
+								console.log(surname);
+							else
+								console.log(i);
+							i--;
+				}while (i > 0);
+			}
+			if (document.getElementById('for').checked) {
+				for (let i = 100; i > 0; i--) {
+					if ( (i % 3 == 0) && (i % 5 == 0) )
+						console.log(name + ' ' + surname);
+					else
+						if (i % 3 == 0)
+							console.log(name);
+						else
+							if (i % 5 == 0)
+								console.log(surname);
+							else
+								console.log(i);
+				}
+			}
+		}
+
+		function pirates () {
+			let first = "Bottle of beer on the wall";
+			let second = "Bottle of beer,";
+			let third = "Take one down, pass it around,";
+			let fourth = "Bottle of beer on the wall."
+			let bottle = 99;
+			do {
+				console.log(bottle + first);
+				console.log(bottle + second);
+				console.log(third);
+				bottle --;
+				console.log (bottle + fourth);
+			} while (bottle > 0) 
+		}
+
+		function fibonacci (numb) {
+			let fib = [0, 1];
+			let k = 0;
+			for (let i = 0; k < (numb - 2); i++) {
+				for (let j = 1; k < (numb - 2); j++ ) {
+					let newFib = fib.push(fib[i]+fib[j]);
+					i++;
+					k++;
+				}
+			}
+			console.log(fib);
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<div style="margin: 18px;">
+		<p class="h5">Завдання №2
+			<br>
+			<br>
+			Оберіть тип виконання</p>
+		do:<input type="radio" id="do" name="">
+		for:<input type="radio" id="for" name=""> <br>
+		<input type="button" value="Click" onclick="array1();">
+		<input type="reset" name="" id="" value="Очистити">
+	</div>
+	<br>
+	<br>
+
+	<div style="margin: 18px;">
+		<p class="h5">Завдання №3
+			<br>
+			<br>
+			Натисніть для виконання пісні та загляніть до консолі (F12)</p>
+		<input type="button" value="Click" onclick="pirates();">
+		<br>
+		<br>
+	</div>
+
+
+	<div style="margin: 18px;">
+		<p class="h5">Послідовність Фібоначчі (натисніть та загляніть до консолі(F12))</p>
+		Kількість елементів послідовності:
+		<br>
+		<input type="number" value="" id="fib">
+		<input type="button" value="Click" onclick="fibonacci(parseInt(document.getElementById('fib').value));">
+	</div>
+</body>
+</html>
